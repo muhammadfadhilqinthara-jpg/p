@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Game Player</title>
+</head>
+<body style="background:white;color:black;text-align:center;padding:100px;font-family:sans-serif;">
+    <h2>Masukkan File Game HTML</h2>
+    <input type="file" id="f" style="font-size:20px;padding:10px;cursor:pointer;">
+    <script>
+        document.getElementById('f').onchange=function(){
+            var r=new FileReader();
+            r.onload=function(e){
+                document.open();
+                document.write(e.target.result);
+                document.close();
+            };
+            r.readAsText(this.files[0]);
+        };
+    </script>
+</body>
+</html>
